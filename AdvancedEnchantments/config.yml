@@ -1,0 +1,441 @@
+# AdvancedEnchantments
+# Made by GC
+enchanter-enabled: true
+tinkerer-enabled: true
+alchemist-enabled: true
+permissions:
+  enchanter:
+    enabled: false
+    perm: ae.enchanter
+  tinkerer:
+    enabled: false
+    perm: ae.tinkerer
+  gkits:
+    enabled: false
+    perm: ae.gkits
+  alchemist:
+    enabled: false
+    perm: ae.alchemist
+disable-enchants:
+  test_world:
+  - test_enchant
+alchemist:
+  settings:
+    combine-books: true
+    combine-dust: true
+  books:
+    add-up-chances: true
+    pre-set-chances:
+      enabled: false
+      success: 50
+      destroy: 50
+  dusts:
+    add-up-and-split: true
+    add-up: false
+  price:
+    exp: true
+    let-plugin-count: true
+    pre-set-pricing:
+      enabled: false
+      price: 250
+    let-plugin-decide: true
+  messages:
+    inv-name: Alchemist
+    item-preview:
+      name: '&e&lItem Preview'
+      lore:
+      - '&7A preview of item you will'
+      - '&7receive from the Alchemist'
+      - '&7will be displayed here.'
+      item:
+        type: STAINED_GLASS_PANE
+        damage: 0
+    item-explanation:
+      name: '&e&lAlchemist'
+      lore:
+      - '&7The Alchemist will Exchange...'
+      - ''
+      - '&b&l* &f2X Enchantment Books'
+      - '&7(of the same type and level)'
+      - '&d= &f1X Enchantment Book'
+      - '&7(of higher level)'
+      - ''
+      - '&b&l* &f2X Magic Dust'
+      - '&7(of the same rarity)'
+      - '&d= &f1X Magic Dust'
+      - '&7(of higher chances)'
+      item:
+        type: STAINED_GLASS_PANE
+        damage: 14
+    item-combine:
+      name: '&b&lCLICK TO EXCHANGE'
+      lore:
+      - '&c&lCOSTS &c%price% EXP'
+      - ''
+      - '&7Click here to confirm this'
+      - '&7item exchange and recieve your'
+      - '&7epic new item shown above!'
+      item:
+        type: STAINED_GLASS_PANE
+        damage: 5
+    item-placeholder:
+      name: ' '
+      lore: []
+      item:
+        type: STAINED_GLASS_PANE
+        damage: 15
+magic-dust:
+  lower-destroy: false
+souls:
+  enabled: true
+  lore: '&cSouls Collected: %souls%'
+  item:
+    type: PAPER
+    id: 0
+    name: '&f&lSoul Tracker'
+    lore:
+    - '&7Apply to weapons to start tracking'
+    - '&7souls collected from kills.'
+    messages:
+      success:
+      - '&7You successfully applied &f&lSoul Tracker &7to your item!'
+    force-glow: false
+combining:
+  enabled: true
+  chances:
+    use-chances: true
+    break-item: true
+    upgrade: true
+  messages:
+    successfull-combining:
+    - '&aSuccess! Enchantment %enchant% is now level %level%!'
+    failure:
+    - '&cCombining failed!'
+    already-max-level:
+    - '&cThis enchantment is already max level!'
+slots:
+  enabled: true
+  max: 9
+  max-increase-of-slots: 13
+  display-in-lore: false
+  display: '&eItem Slots&7: %left%'
+  message:
+  - '&c&l(!) &cYou can only apply 7 maximum enchantments!'
+applying:
+  already-applied:
+  - '&c&l(!) &cThe item already has this enchantment.'
+  applied:
+  - '&a&l(!) &aEnchantment was applied to your item.'
+  max-level:
+  - '&c&l(!) &cThis enchantment is already at max level!'
+  wrong-material:
+  - '&c&l(!) &cThis enchantment cannot be applied on this item.'
+enchanter-books:
+  firework-on-open: true
+  display-right-click-message: false
+  message:
+  - '&7You examined %group-color%%group%&7 book and found %enchant-color% %level%'
+  type: BOOK
+  id: 0
+  force-glow: false
+  name: '%group-color%&l%group-name%&l Enchantment Book &7(Right Click)'
+  lore:
+  - '&7Examine to receive a random'
+  - '%group-color%%group-name% &7enchantment book.'
+items:
+  settings:
+    can-apply-to:
+    - ALL_SWORD
+    - ALL_ARMOR
+    - ALL_PICKAXE
+    - ALL_AXE
+    - ALL_SHOVEL
+    - ALL_HOE
+    - BOOK
+    - BOW
+  transmogscroll:
+    type: PAPER
+    id: 0
+    name: '&c&lTransmog Scroll'
+    lore:
+    - '&7Organizes enchants by &e&nrarity&7 on item'
+    - '&7and adds the &dlore &bcount&7 to name.'
+    - ''
+    - '&e&oPlace scroll on item to apply.'
+    enchants-count-formatting: '&d[&b&n%count%&d]'
+  soulgem:
+    type: EMERALD
+    id: 0
+    name: '&c&lSoul Gem &7[&a%count%&7]'
+    lore:
+    - '&7Apply to an item to add souls.'
+  itemnametag:
+    type: NAME_TAG
+    id: 0
+    name: '&6&lItem NameTag &7(Right Click)'
+    lore:
+    - '&7Rename and customize your equipment'
+    messages:
+      success:
+      - '&e&l(!) &eYou have successfully renamed your item to &e%name%'
+      activated:
+      - '&e&l(!) &eYour next message will rename your item in hand'
+      air:
+      - '&c&l(!) &cYou need to be holding an item to do this'
+    settings:
+      colors: true
+      magic: false
+      word-blacklist:
+      - fuck
+      - dick
+      - bitch
+  randomization-scroll:
+    type: PAPER
+    id: 0
+    name: '%group-color%%group-name%%group-color% Randomization Scroll'
+    lore:
+    - ''
+    - '&7Apply to an enchantment book to'
+    - '&7reroll the success and destroy rates.'
+    - ''
+    - '&7Drag n'' drop onto &nenchantment book&7 to apply.'
+  black-scroll:
+    type: INK_SACK
+    id: 0
+    name: '&f&lBlack Scroll'
+    lore:
+    - '&7Removes a random enchantment'
+    - '&7from an item and converts'
+    - '&7it into a &f%success%% &7success book.'
+    - '&fPlace scroll onto item to extract.'
+    success: 95
+    destroy: 5
+    random: true
+  secret-dust:
+    type: FIREBALL
+    id: 0
+    name: '%group-color%%group-name%%group-color% Secret Dust &7(Right Click)'
+    lore:
+    - '&7Contains: &bMagic, &fMystery &7dust.'
+    - '&7An unidentified satchel of dust.'
+  mystery-dust:
+    type: SULPHUR
+    id: 0
+    name: '&fMystery Dust'
+    lore:
+    - '&7A failed bi-product'
+    - '&7of Magic dust.'
+  magic-dust:
+    type: SUGAR
+    id: 0
+    name: '%group-color%%group-name%%group-color% Magic Dust'
+    lore:
+    - '&a+%percent%% Success'
+    - '&7Apply to a &7any %group-color%%group-name% &7Enchantment Book'
+    - '&7to increase its success by %group-color%%percent%%'
+  slot-increaser:
+    type: EYE_OF_ENDER
+    id: 0
+    name: '%group-color%%group-name% Slot Increaser'
+    lore:
+    - '&7Increase slots limit on an item by &b+%count%'
+    messages:
+      success:
+      - '&7You have successfully increased maximum slots by %count%!'
+  blocktrak:
+    type: SLIME_BALL
+    id: 0
+    name: '&aBlockTrak Creator'
+    lore:
+    - '&7Track how many blocks you break with a tool'
+    - '&7Drag ontop of another item to apply it'
+    messages:
+      success:
+      - '&7You successfully applied &aBlockTrak Creator'
+    settings:
+      lore-display: '&eBlockTrak Blocks Broken: &6%stats%'
+  stattrak:
+    type: MAGMA_CREAM
+    id: 0
+    name: '&eStatTrak Creator'
+    lore:
+    - '&7track how many kills you have with a weapon'
+    - '&7Drag ontop of another item to apply it'
+    messages:
+      success:
+      - '&7You successfully applied &eStatTrak Creator'
+    settings:
+      lore-display: '&eStatTrak Kills: &6%stats%'
+  mobtrak:
+    type: SLIME_BALL
+    id: 0
+    name: '&3MobTrak Creator'
+    lore:
+    - '&7track how many mob kills you have with a weapon'
+    - '&7Drag ontop of another item to apply it'
+    messages:
+      success:
+      - '&7You successfully applied &3MobTrak Creator'
+    settings:
+      lore-display: '&3MobTrak Kills: &f%stats%'
+white-scroll:
+  delete: true
+  lore-display: '&f&lPROTECTED'
+  item:
+    type: EMPTY_MAP
+    id: 0
+    force-glow: false
+    name: '&fWhite Scroll'
+    lore:
+    - '&fPrevents an item from being destroyed'
+    - '&fdue to a failed Enchantment Book.'
+    - '&ePlace scroll on item to apply.'
+  messages:
+    applied:
+    - '&e&l(!) &eWhite scroll has been applied to your item.'
+    failed:
+    - '&c&l(!) &cWhite scroll saved the item.'
+enchanter:
+  open-sound: BLOCK_CHEST_OPEN
+  disabled-in-worlds:
+  - bad_world
+  messages:
+    cannot-afford:
+    - '&cYou cannot afford this purchase.'
+    successfull-purchase:
+    - '&aYou successfully made a purchase!'
+    sound: ENTITY_PLAYER_LEVELUP
+  right-click-to-view-enchants: true
+  go-back-item:
+    enabled: true
+    item:
+      type: NETHER_STAR
+      id: 0
+    name: '&c&lGo Back'
+    lore: []
+  keep-open: true
+  inventory:
+    size: 9
+    name: '&7Server Enchanter'
+    items:
+      '2':
+        item:
+          type: STAINED_GLASS_PANE
+          id: 0
+          force-glow: false
+        enchant-group: SIMPLE
+        price: exp:400
+        name: '&f&lSimple Enchantment &7(Right Click)'
+        lore:
+        - '&7Examine to recieve a random'
+        - '&fsimple &7enchantment book.'
+        - ''
+        - '&b&lCOST &f400 EXP'
+      '3':
+        item:
+          type: STAINED_GLASS_PANE
+          id: 5
+          force-glow: false
+        enchant-group: UNIQUE
+        price: exp:800
+        name: '&a&lUnique Enchantment &7(Right Click)'
+        lore:
+        - '&7Examine to recieve a random'
+        - '&aunique &7enchantment book.'
+        - ''
+        - '&b&lCOST &f800 EXP'
+      '4':
+        item:
+          type: STAINED_GLASS_PANE
+          id: 3
+          force-glow: false
+        enchant-group: ELITE
+        price: exp:2500
+        name: '&b&lElite Enchantment &7(Right Click)'
+        lore:
+        - '&7Examine to recieve a random'
+        - '&belite &7enchantment book.'
+        - ''
+        - '&b&lCOST &f2500 EXP'
+      '5':
+        item:
+          type: STAINED_GLASS_PANE
+          id: 4
+          force-glow: false
+        enchant-group: ULTIMATE
+        price: exp:5000
+        name: '&e&lUltimate Enchantment &7(Right Click)'
+        lore:
+        - '&7Examine to recieve a random'
+        - '&eultimate &7enchantment book.'
+        - ''
+        - '&b&lCOST &f5000 EXP'
+      '6':
+        item:
+          type: STAINED_GLASS_PANE
+          id: 1
+          force-glow: false
+        enchant-group: LEGENDARY
+        price: exp:25000
+        name: '&6&lLegendary Enchantment &7(Right Click)'
+        lore:
+        - '&7Examine to recieve a random'
+        - '&6legendary &7enchantment book.'
+        - ''
+        - '&b&lCOST &f25000 EXP'
+destroy:
+  enabled: true
+  destroy-item: true
+  message:
+  - '&c&l(!) &cEnchantment was unsuccessful'
+  sound:
+    enabled: true
+    play: BLOCK_ANVIL_BREAK
+  particles:
+    enabled: true
+    type: FLAME
+chances:
+  random: true
+  success: 92
+  destroy: 8
+  destroy-if-fail:
+    enabled: true
+    message:
+    - '&e&l(!) &7Your book failed but item wasn''t destroyed!'
+enchantment-book:
+  item:
+    type: BOOK
+    id: 0
+    force-glow: false
+  name: '%group-color%&l&n%enchant-no-color% %level%'
+  lore:
+  - '&a%success%% Success Rate'
+  - '&c%destroy%% Destroy Rate'
+  - '&e%description%'
+  - '&7%applies% Enchantment'
+  - '&7Drag n'' drop onto item to enchant'
+messages:
+  main-hand-only: '&cYou can only do this with main hand!'
+  command:
+    info:
+    - '&eInformation about &6%enchant% &eenchantment&7:'
+    - '&6Description&7: &e%description%'
+    - '&6Applies to&7: &e%applies%'
+    - '&6Max level&7: &e%max-level%'
+    enchantment-not-found:
+    - '&cEnchantment &c&n%enchant%&c could not be found.'
+    player-not-online: '&f%player% &cis not online!'
+    no-permission: '&cYou do not have permission to use this command.'
+    not-a-number: '&f%number% &cis not a number!'
+    invalid-level: '&cLevel is too big, try using:&f %levels%'
+  enchantment-cannot-be-removed: '&cEnchantment %enchant% cannot be removed!'
+  cannot-apply-with: '&7Enchantment cannot be applied together with &c%enchant%&7
+    enchant.'
+  requires-enchant: '&7Enchantment requires &c%enchant% &7enchant to be applied.'
+settings:
+  use-legacy-potions-system: true
+  steal-money:
+    message-enabled: false
+    message: '&6%attacker% &7stole &6%amount% &7from &6%victim%'
+  combo-limit: 5
+  trench-autoadd-items: false
