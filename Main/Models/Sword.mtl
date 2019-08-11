@@ -1,0 +1,10 @@
+# Made in Blockbench 3.0.6
+newmtl 0
+map_Kd Crystal.png 
+newmtl 1
+map_Kd Black.png 
+newmtl 2
+map_Kd Grip.png 
+newmtl 3
+map_Kd Blade.png 
+newmtl none
